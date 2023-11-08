@@ -971,6 +971,7 @@ header {
             width: 70px;
             object-fit: cover;
             border-radius: 50px;
+            // måste gå att fixa så att hen blir rund genom position? men fattar inte hur man får elementet att ignorera bootstrap container, som jag antar gör så den fuckar.
           }
           .avatarTitle {
             justify-content: center;
