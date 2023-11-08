@@ -1,6 +1,5 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Test from './components/Test'
 import Home from './views/Home'
 function App() {
 
@@ -12,7 +11,7 @@ function App() {
 
       </Route>
     </Routes>
-     <Test />
+   
     
     </BrowserRouter>
   )
