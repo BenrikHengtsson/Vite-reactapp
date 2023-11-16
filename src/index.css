@@ -1,8 +1,50 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.contactForm .container {
+  background-color: #f0efe9;
+}
+.contactForm .container .sectionTitle {
+  width: 35%;
+}
+.contactForm .container .contactForm {
+  display: flex;
+  flex-direction: column;
+}
+.contactForm .container .contactForm .input-group {
+  align-items: center;
+  justify-content: center;
+}
+.contactForm .container .contactForm .input-group input {
+  width: 100%;
+  margin: 0px 200px 20px 200px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+}
+.contactForm .container .contactForm .inputMessage {
+  align-items: center;
+  justify-content: center;
+}
+.contactForm .container .contactForm .inputMessage input {
+  padding: 0px 20px 80px 20px;
+  width: 100%;
+  margin: 0px 200px 20px 200px;
+  border: none;
+  border-radius: 25px;
+}
+.contactForm .container .contactForm .input-checkbox-group {
+  width: 35‰;
+  margin-bottom: 20px;
+}
+
 .newScssPage {
   background-color: aqua;
   color: black;
+}
+
+.map {
+  width: 100%;
 }
 
 html,
