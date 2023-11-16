@@ -1,6 +1,36 @@
+.contactTopicTop{
+    background-color: #f0efe9;
+    margin-bottom: 90px;
+}
+.wierdTopicMenu{
+    
+    display:flex;
+    flex-direction: column;
+.topLinks{
+    align-items: center;
+    text-align: center;
+    
+    .topicLinks{
+        padding-right: 10px;
+        text-decoration: none;
+        color: black;
+
+    }
+    &.active::after,
+    &:hover::after{
+    color: antiquewhite;
+}
+}
+   
+}
+
+
 .contactForm {
     .container{
         background-color: #f0efe9;   
+        h2{
+            text-align: center;
+        }
         
         .sectionTitle{
             width: 35%;
