@@ -1,5 +1,7 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import img_logo from '../assets/images/logo.svg'
+
 
 
 const header = () => {
@@ -37,18 +39,21 @@ const header = () => {
               <a href="https:instagram.com" target="_blank"
                 ><i className="fa-brands fa-instagram"></i
               ></a>
-              <a href="https:linkedin.com" target="_blank"
-                ><i className="fa-brands fa-linkedin"></i
+              <a href="https:NavLinkedin.com" target="_blank"
+                ><i className="fa-brands fa-NavLinkedin"></i
               ></a>
             </div>
           </div>
 
           <div className="mainMenu">
             <nav>
-              <a className="active" href="index.html">Home</a>
-              <a href="#">Services</a>
-              <a href="#">News</a>
-              <a href="#">Contact</a>
+            {/* <NavLink to="/" className="active"> */}
+            <NavLink to="/">
+                Home
+              </NavLink>
+              <NavLink to="/services">Services</NavLink>
+              <NavLink to="/news">News</NavLink>
+              <NavLink to="/Contact">Contact</NavLink>
             </nav>
 
             <a className="btnLogin" href="#"
