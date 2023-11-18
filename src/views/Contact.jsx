@@ -14,9 +14,7 @@ const Contact = () => {
       <div className='container sectionTitle centerContent'>
         <div className='wierdTopicMenu'>
           <div className='topLinks'>
-      <NavLink  className='topicLinks'to="/">
-                Home
-              </NavLink>
+      <NavLink  className='topicLinks'to="/">Home</NavLink>
               <NavLink className='topicLinks' to="/Contact">Contact</NavLink>
               </div>
         <h2>Let's Connect</h2>
@@ -24,10 +22,8 @@ const Contact = () => {
       </div>
     
     </div>
-    <div className='newScssPage'>Testar import från seperat scss fil som heter contacts, importen går till index.scss</div>
     <ContactForm/>
     <img className='map' src={img_mapLocation} alt="" />
-    <PrimaryButton/>
     <Footer/>
     </>
   )

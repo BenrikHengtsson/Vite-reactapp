@@ -23,6 +23,15 @@
   color: antiquewhite;
 }
 
+.errorForm {
+  color: red;
+  margin: 0px 200px 0px 220px;
+}
+
+.nonVisible {
+  color: transparent;
+}
+
 .contactForm .container {
   background-color: #f0efe9;
 }
@@ -36,13 +45,9 @@
   display: flex;
   flex-direction: column;
 }
-.contactForm .container .contactForm .input-group {
-  align-items: center;
-  justify-content: center;
-}
 .contactForm .container .contactForm .input-group input {
   width: 100%;
-  margin: 0px 200px 20px 200px;
+  margin: 10px 200px 10px 200px;
   padding: 12px 20px;
   border: none;
   border-radius: 25px;
@@ -61,11 +66,6 @@
 .contactForm .container .contactForm .input-checkbox-group {
   width: 35‰;
   margin-bottom: 20px;
-}
-
-.newScssPage {
-  background-color: aqua;
-  color: black;
 }
 
 .map {

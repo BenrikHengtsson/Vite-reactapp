@@ -24,6 +24,13 @@
    
 }
 
+.errorForm{
+    color: red;
+    margin: 0px 200px 0px 220px;
+}
+
+.nonVisible{
+    color: transparent;}
 
 .contactForm {
     .container{
@@ -40,13 +47,10 @@
                 flex-direction: column;
             
             .input-group{
-            align-items: center;
-            justify-content: center;
-            
             
             input{
                 width: 100%;
-                margin: 0px 200px 20px 200px;
+                margin: 10px 200px 10px 200px;
                 padding: 12px 20px;
                 border: none;
                 border-radius: 25px;
@@ -75,10 +79,7 @@
     }
 }
 
-.newScssPage{
-    background-color: aqua;
-    color: black;
-}
+
 .map{
     width: 100%;
 }
