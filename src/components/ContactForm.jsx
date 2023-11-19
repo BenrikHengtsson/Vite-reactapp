@@ -4,9 +4,17 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 // import { PrimaryButton } from './general/PrimaryButton'
 
+// Gillar Formik, men inte YUP, lättare att skriva kod själv från grunden för att få kod att agera som man Vill.
+// Troligtvis behöver jag läsa på mer om Yup, innan det blir riktigt användbart för en
+// Kunde inte få samma problem som Hans i videon heller, ang hans problem med den dynamiska uppdateringen, min uppdateras direkt,
+//  men jag vill egentligen att den ska agera mindre dynamiskt, likt "problemet" i videon..
+// även svårt att få fram ett felmeddelande genom detta exempel. Samt hur fan får man igång prettier, allt ser förjävligt ut.
+
 const ContactForm = () => {  
 const [errorMessage, SetErrorMessage] = useState('')
-const invisibleLetterSpacing = <p className="nonVisible">boo!</p>;
+const [SentMessage, SetSentMessage] = useState('')
+const invisibleLetterSpacing = <p className="nonVisible">boo!</p>; 
+// dåligt försök att inte få allt att röra på sig error uppdateras dynamiskt..
 
 const form = useFormik( {
     initialValues: {
@@ -27,17 +35,33 @@ const form = useFormik( {
         .min(10,"The message should include a minimum of 10 characters.")
     } ),
 
-    onSubmit: (values) => {
-        console.log(values)
+    onSubmit: async (values, { resetForm }) => {
+        // console.log(values)
+        const result = await fetch('https://win23-assignment.azurewebsites.net/api/contactform', {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body:JSON.stringify(values)
+        })
+        switch (result.status) {
+            case 200:
+                alert('Message succesfully sent!')
+                SetSentMessage(<h2>Thanks for your question! We will get back to you soon.</h2>)
+                resetForm();
+                break;
+
+            case 400:
+                SetErrorMessage(<h2>Request unsuccessful, please try again.</h2>)
+                break;    
+        }
     }
-
     }
-
-
 )
 
   return (
-    <section className='contactForm'>
+    
+    <section className='contactForms'>
     <div className='container'>
         <div className='centerContent'>
             <div className='sectionTitle'>
@@ -46,7 +70,8 @@ const form = useFormik( {
                 </h2>
             </div>
         </div>
-        
+        <div className='errorForm'>{errorMessage}</div>
+        <div>{SentMessage}</div>
 
         <div className='contactForm'>
 
@@ -63,9 +88,14 @@ const form = useFormik( {
                 <div className='input-group inputMessage'>
                     <input type="text" name="Message" placeholder="Message *" value={form.values.Message} onChange={form.handleChange} onBlur={form.handleBlur} />
                 </div>
+                <div className='input-checkbox-group'>
+                    <input type="checkbox" name="Terms"  value={form.values.Terms} onChange={form.handleChange} onBlur={form.handleBlur} />
+                    <label>I agree that Crito has permission to use this conversation for educational purposes.</label>
+                </div>
     
                 <div className='centerContent'>
-                    <button type='submit'>köööör</button>
+                    <button className='btnPrimary' type='submit' disabled={!form.values.Terms}>Send Message <i className="fa-solid fa-arrow-up-right-from-square"></i
+        ></button>
                 </div>
 
             </form>
@@ -74,6 +104,7 @@ const form = useFormik( {
             </div>    
     </div>
     </section>
+    
   )
 }
 
