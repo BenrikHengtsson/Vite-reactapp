@@ -110,6 +110,50 @@
   width: 100%;
 }
 
+.contactCards .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  padding: 0px 0px 50px 0px;
+  gap: 30px;
+}
+
+.custom-card {
+  display: flex;
+  border: 1px solid #b1b1b1;
+  overflow: hidden;
+  margin: 10px 0px 10px 0px;
+  width: auto; /* Adjust the width as needed */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.image-container {
+  flex: 1;
+  padding: 10px;
+}
+
+img {
+  width: 50%;
+  height: auto;
+  margin-left: 40px;
+}
+
+.content-container {
+  flex: 2;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 0px;
+  font-weight: 200;
+}
+
 html,
 body {
   font-family: "Inter", sans-serif;
